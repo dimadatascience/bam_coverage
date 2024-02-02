@@ -16,6 +16,9 @@ process coverage {
 
     script:
     """
+    if ! [ -f ${bam_file}.bai ]; then
+        samtools index ${bam_file}
+    fi
     samtools depth -a -b ${params.bed} -o ${patient}.coverage.tsv ${bam_file} --threads ${task.cpus} --reference ${params.fasta}
     """
 }
