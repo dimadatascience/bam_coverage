@@ -25,8 +25,8 @@ process clinvar_assignment {
     grep -E "CLNSIG=Pathogenic|CLNSIG=Likely_patho" clinvar.intersect.vcf | sort -k1,1 -k2,2n | uniq >> clinvar.intersect.patho.vcf
     grep -E -v "CLNSIG=Benign|CLNSIG=Likely_benign|CLNSIG=Pathogenic|CLNSIG=Likely_patho" clinvar.intersect.vcf >> clinvar.intersect.uncertain.vcf
 
-    bedtools intersect -a ${patient}.coverage.bed -b clinvar.intersect.patho.vcf > ${patient}.coverage.clinvar.patho.bed
-    bedtools intersect -a ${patient}.coverage.bed -b clinvar.intersect.uncertain.vcf > ${patient}.coverage.clinvar.uncertain.bed
+    bedtools intersect -a ${patient}.coverage.bed -b clinvar.intersect.patho.vcf | sort -k1,1 -k2,2n | uniq > ${patient}.coverage.clinvar.patho.bed
+    bedtools intersect -a ${patient}.coverage.bed -b clinvar.intersect.uncertain.vcf | sort -k1,1 -k2,2n | uniq > ${patient}.coverage.clinvar.uncertain.bed
 
     """
 }
