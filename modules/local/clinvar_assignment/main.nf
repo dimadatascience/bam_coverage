@@ -19,14 +19,12 @@ process clinvar_assignment {
     awk '{print \$1,\$2-1,\$2, \$3}' ${patient}.coverage.tsv > ${patient}.coverage.bed
     sed -i 's/ /\\t/g' ${patient}.coverage.bed
     awk '{if(\$0~/^#/) print \$0}' ${params.clinvar_vcf} > clinvar.intersect.vcf
-    awk '{if(\$0~/^#/) print \$0}' ${params.clinvar_vcf} > clinvar.intersect.patho.vcf
-    bedtools intersect -b ${patient}.coverage.bed -a ${params.clinvar_vcf} >> clinvar.intersect.vcf
+    bedtools intersect -b ${patient}.coverage.bed -a ${params.clinvar_vcf} | sort | uniq >> clinvar.intersect.vcf
 
-    grep -E "CLNSIG=Pathogenic|CLNSIG=Likely_patho" clinvar.intersect.vcf | sort -k1,1 -k2,2n | uniq >> clinvar.intersect.patho.vcf
-    grep -E -v "CLNSIG=Benign|CLNSIG=Likely_benign|CLNSIG=Pathogenic|CLNSIG=Likely_patho" clinvar.intersect.vcf >> clinvar.intersect.uncertain.vcf
+    grep -E "CLNSIG=Pathogenic|CLNSIG=Likely_patho" clinvar.intersect.vcf | awk '{print \$1, \$2-1, \$2}' | sed 's/ /\\t/g' > clinvar.intersect.patho.vcf
+    grep -E -v "CLNSIG=Benign|CLNSIG=Likely_benign|CLNSIG=Pathogenic|CLNSIG=Likely_patho" clinvar.intersect.vcf | awk '{print \$1, \$2-1, \$2}' | sed 's/ /\\t/g' > clinvar.intersect.uncertain.vcf
 
-    bedtools intersect -a ${patient}.coverage.bed -b clinvar.intersect.patho.vcf | sort -k1,1 -k2,2n | uniq > ${patient}.coverage.clinvar.patho.bed
-    bedtools intersect -a ${patient}.coverage.bed -b clinvar.intersect.uncertain.vcf | sort -k1,1 -k2,2n | uniq > ${patient}.coverage.clinvar.uncertain.bed
-
+    bedtools intersect -a ${patient}.coverage.bed -b clinvar.intersect.patho.vcf | sort  | uniq > ${patient}.coverage.clinvar.patho.bed
+    bedtools intersect -a ${patient}.coverage.bed -b clinvar.intersect.uncertain.vcf | sort | uniq > ${patient}.coverage.clinvar.uncertain.bed
     """
 }
