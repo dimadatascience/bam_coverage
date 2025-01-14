@@ -63,12 +63,14 @@ Output structure:
 params.outdir
 |-- date
 |   `-- patient
-|       |-- patient.profiled_metagenome.txt
-|       |-- patient.topXX.csv
+|       |-- patient.coverage.bed
+|       |-- patient.coverage.clinvar.patho.bed
+|       |-- patient.coverage.clinvar.uncertain.bed
 
 ```
 
-The pipeline outputs for each patient two files
+The pipeline outputs for each patient three files
 
-1) patient.profiled_metagenome.txt: the whole MetaPhlAn quantification
-2) patient.topXX.csv: the top XX clades with the abundancy found in healthy patients belonging to the same population.
+1) patient.coverage.bed: 
+2) patient.coverage.clinvar.patho.bed:
+3) patient.coverage.clinvar.uncertain.bed:
