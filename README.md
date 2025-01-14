@@ -13,7 +13,7 @@
 - [Output](#output)
 
 ## Overview
-Nextflow Implementation for Coverage analysis of a list of coordinates given bam files.
+Nextflow Implementation for Coverage analysis of a list of coordinates given bam files, using samtools and bedtools.
 
 ## Installation
 
@@ -53,7 +53,6 @@ __IMPORTANT: HEADER is required__
 
 bam and bai must be provided with full path, __not__ relative path.
 
-Population that the individual belongs to, available options: Europe, Asia, North_America, South_America, Africa, Oceania, all (all population merged).
 
 
 ## Output
