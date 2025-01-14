@@ -71,6 +71,6 @@ params.outdir
 
 The pipeline outputs for each patient three files
 
-1) patient.coverage.bed: 
+1) patient.coverage.bed: produced with samtools depth using input bam file and bed file with coordinates;
 2) patient.coverage.clinvar.patho.bed: produced with bedtools intersect using file 1 and vcf from clinvar, considering pathogenic variants;
-3) patient.coverage.clinvar.uncertain.bed: produced with bedtools intersect using file 1 and vcf from clinvar, considering unknown variants;
+3) patient.coverage.clinvar.uncertain.bed: produced with bedtools intersect using file 1 and vcf from clinvar, considering unknown variants.
