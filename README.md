@@ -20,7 +20,7 @@ Nextflow Implementation for Coverage Analysis with
 Clone the repo
 
 ```
-git clone git@github.com:zhanyinx/metagenomics.git
+git clone git@github.com:dimadatascience/bam_coverage.git
 ```
 
 Download the MetaPhlAn databases from [here](http://cmprod1.cibio.unitn.it/biobakery4/metaphlan_databases/)
