@@ -46,12 +46,12 @@ The nextflow pipeline takes as input a csv samplesheet with 3 columns
 
 __IMPORTANT: HEADER is required__ 
 
-| patient        | sample_path         | population   |
-| -------------- | ------------------- | -------------|
-| patient1       | path2fastq.gz files | Europe      |
-| .....          | .....               | .....        |
+| patient   | bam             | bai               |
+| --------- | --------------- | ----------------- |
+| patient1  | path2.bam files | path2.bai files   |
+| .....     | .....           | .....             |
 
-sample_path must be provided with full path, __not__ relative path.
+bam and bai must be provided with full path, __not__ relative path.
 
 Population that the individual belongs to, available options: Europe, Asia, North_America, South_America, Africa, Oceania, all (all population merged).
 
