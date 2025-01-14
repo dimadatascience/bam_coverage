@@ -13,7 +13,7 @@
 - [Output](#output)
 
 ## Overview
-Nextflow Implementation for Coverage Analysis with 
+Nextflow Implementation for Coverage analysis of a list of coordinates given bam files.
 
 ## Installation
 
