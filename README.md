@@ -26,7 +26,10 @@ git clone git@github.com:dimadatascience/bam_coverage.git
 
 ## Usage
 
-Update in the configuration file (nextflow.config) by setting the path to the databases:
+Update in the configuration file (nextflow.config) by setting the path to :
+ - fasta file
+ - bed file
+ - clinvar_vcf
 
 
 To run the pipeline
