@@ -23,17 +23,11 @@ Clone the repo
 git clone git@github.com:dimadatascience/bam_coverage.git
 ```
 
-Download the MetaPhlAn databases from [here](http://cmprod1.cibio.unitn.it/biobakery4/metaphlan_databases/)
-
-The control databases can be downloaded  [missing link]()
 
 ## Usage
 
 Update in the configuration file (nextflow.config) by setting the path to the databases:
 
-- bowtie2db: MetaPhlAn databases that can be downloaded from [here](http://cmprod1.cibio.unitn.it/biobakery4/metaphlan_databases/) 
-
-- control_db: control databases that can be downloaded [missing link]()
 
 To run the pipeline
 
