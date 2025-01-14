@@ -28,8 +28,8 @@ git clone git@github.com:dimadatascience/bam_coverage.git
 
 Update in the configuration file (nextflow.config) by setting the path to :
  - fasta file
- - bed file
- - clinvar_vcf
+ - bed file: bed file with the coordinates to scan, coordinates: start excluded, end included.
+ - clinvar file: VCF file from clinvar with pathogenic score
 
 
 To run the pipeline
