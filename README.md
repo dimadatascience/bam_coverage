@@ -27,9 +27,9 @@ git clone git@github.com:dimadatascience/bam_coverage.git
 ## Usage
 
 Update in the configuration file (nextflow.config) by setting the path to :
- - fasta file
+ - fasta file: genome fasta file
  - bed file: bed file with the coordinates to scan, coordinates: start excluded, end included.
- - clinvar file: VCF file from clinvar with pathogenic score
+ - clinvar file: VCF file from clinvar to get the pathogenic score
 
 
 To run the pipeline
